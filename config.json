@@ -1,0 +1,22 @@
+{
+  "name": "EVCC Nightly",
+  "version": "0.1.0",
+  "slug": "evcc-nightly",
+  "description": "EVCC nightly build as Home Assistant add-on",
+  "arch": ["amd64", "armv7", "armhf", "aarch64"],
+  "startup": "application",
+  "boot": "auto",
+  "ports": {
+    "7070/tcp": 7070
+  },
+  "map": ["config:rw", "data:rw"],
+  "options": {
+    "config_file": "/config/evcc.yaml",
+    "sqlite_file": "/data/evcc.db"
+  },
+  "schema": {
+    "config_file": "str",
+    "sqlite_file": "str"
+  },
+  "image": "ghcr.io/evcc-io/evcc:nightly"
+}
